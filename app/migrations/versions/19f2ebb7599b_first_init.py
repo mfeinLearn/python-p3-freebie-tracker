@@ -1,8 +1,8 @@
-"""create freebies.db
+"""First Init
 
-Revision ID: c4d7867d81f5
-Revises: 
-Create Date: 2022-11-02 14:14:44.979104
+Revision ID: 19f2ebb7599b
+Revises: ee905476242e
+Create Date: 2022-12-16 10:35:33.186324
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'c4d7867d81f5'
-down_revision = None
+revision = '19f2ebb7599b'
+down_revision = 'ee905476242e'
 branch_labels = None
 depends_on = None
 

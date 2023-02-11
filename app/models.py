@@ -98,6 +98,11 @@ class Dev(Base):
 
 
     def give_away(self,dev, freebie):
+        ###
+        ###
+        #-- broken need to fix!!!
+        ###
+        ###
         # Dev.give_away(dev, freebie) accepts a Dev instance and a Freebie instance, changes the freebie's dev to be the given dev; your code should only make the change if the freebie belongs to the dev who's giving it away
         Session = sessionmaker(bind=engine)
         session = Session()

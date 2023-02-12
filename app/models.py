@@ -6,7 +6,8 @@ from sqlalchemy.orm import relationship, backref, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 
-engine = create_engine('sqlite:///freebie-tracker.db')
+engine = create_engine('sqlite:///freebies.db')
+# engine = create_engine('sqlite:///freebie-tracker.db')
 
 Base = declarative_base()
 
@@ -107,7 +108,7 @@ class Dev(Base):
         Session = sessionmaker(bind=engine)
         session = Session()
         # # dev = self
-        freebie = session.query(Freebie).filter_by(dev_id=dev.id).first()
+        #freebie = session.query(Freebie).filter_by(dev_id=dev.id).first()
         print('''
         
         
@@ -118,7 +119,14 @@ class Dev(Base):
         
         
         ''')
-        freebie.dev_id = dev.id 
+        print(freebie)
+
+        session.add(dev)
+        session.commit()
+
+        dev_just_added = session.query(Dev).order_by(Dev.id.desc()).first()
+
+        freebie.dev_id = dev_just_added.id 
         session.commit()
 
 

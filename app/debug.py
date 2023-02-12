@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from sqlalchemy import create_engine
-
 from models import Company, Dev
 
 if __name__ == '__main__':
